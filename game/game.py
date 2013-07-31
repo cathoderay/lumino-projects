@@ -61,6 +61,7 @@ pygame.mixer.music.load('./song.mp3')
 tone = pygame.mixer.Sound('./tone.wav')
 
 
+lumino = Lumino('/dev/ttyUSB0')
 while running:
     if not in_level:
         background.fill(BLACK)
@@ -94,8 +95,7 @@ while running:
     ts = time.time()
     pointsa = 0
     pointsb = 0
-    l = Lumino('/dev/ttyUSB0')
-    ra, rb = l.get()
+    ra, rb = lumino.get()
     rad, rbd = ra/4, rb/4
 
     if rad <= SMALL + (HALF - SMALL)/2:
