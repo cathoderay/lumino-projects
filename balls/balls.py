@@ -7,10 +7,10 @@ screen = pygame.display.set_mode(resolution)
 pygame.display.toggle_fullscreen()
 
 
+l = Lumino('/dev/ttyUSB0') 
 running = True
 while running:
     screen.fill((0, 0, 0))
-    l = Lumino('/dev/ttyUSB0') 
     ra, rb = l.get()
     pygame.draw.circle(screen, (255, 0, 0), (300, 300), ra/3, 0)
     pygame.draw.circle(screen, (0, 255, 0), (700, 300), rb/3, 0)
